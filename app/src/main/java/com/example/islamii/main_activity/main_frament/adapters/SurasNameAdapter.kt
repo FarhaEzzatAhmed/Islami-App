@@ -26,7 +26,7 @@ class SurasNameAdapter(var suras : List<String> , var count: Int =286) :
         holder.suraName.text = suras.get(position)
         holder.suraContentCount.text = "$count"
         holder.itemView.setOnClickListener{
-            onSuraClickListener?.onSuraClick(position)
+            onSuraClickListener?.onSuraClick(position,suras.get(position))
         }
     }
 

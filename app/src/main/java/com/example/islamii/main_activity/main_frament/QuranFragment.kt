@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.islamii.Constans
 import com.example.islamii.R
 import com.example.islamii.callbacks.OnsouraClickListener
 import com.example.islamii.data_model.ArSuras
@@ -33,8 +34,11 @@ class QuranFragment :Fragment(){
         quranRecyclerView.layoutManager =LinearLayoutManager(context)
         quranAdapter.onSuraClickListener = object : OnsouraClickListener{
 
-            override fun onSuraClick(position: Int) {
-                //val intent = Intent(this@QuranFragment,Quran_Details_activity::class.java)
+            override fun onSuraClick(position: Int , suraName :String) {
+                val intent1 = Intent(requireActivity(),Quran_Details_activity::class.java)
+                intent1.putExtra(Constans.EXTRA_SURA_POSITION,position)
+                intent1.putExtra(Constans.EXTRA_SURA_Name,suraName)
+                startActivity(intent1)
             }
         }
     }
