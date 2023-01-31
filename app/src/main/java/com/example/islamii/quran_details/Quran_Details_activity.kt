@@ -2,6 +2,8 @@ package com.example.islamii.quran_details
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.islamii.Constans
@@ -13,6 +15,8 @@ class Quran_Details_activity : AppCompatActivity() {
     var suraName : String?= null
     lateinit var suraContentRecyclerView: RecyclerView
     lateinit var adapter :SuraContentAdapter
+    lateinit var suraNameTextView: TextView
+    lateinit var backIcon :ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quran_details)
@@ -23,6 +27,13 @@ class Quran_Details_activity : AppCompatActivity() {
         suraPosition = intent.getIntExtra(Constans.EXTRA_SURA_POSITION,-1)
         suraContentRecyclerView.adapter =adapter
         readFileText()
+
+        suraNameTextView = findViewById(R.id.sura_details_name)
+        suraNameTextView.text=suraName
+        backIcon = findViewById(R.id.back)
+        backIcon.setOnClickListener{
+            finish()
+        }
     }
 
     // 3lshan a3ml read l file asset

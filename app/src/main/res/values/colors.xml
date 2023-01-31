@@ -11,5 +11,8 @@
     <color name="darkBlue">#141A2E</color>
     <color name="GoldForDark">#FACC1D</color>
     <color name="CounterColor">#B7935F</color>
+    <color name="whiteWith80opacity">#CCFFFFFF</color>
+    <color name="whiteDrkBlueWith80opacity">#CC141A2E</color>
+
     
 </resources>

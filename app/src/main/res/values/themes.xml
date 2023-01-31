@@ -20,4 +20,13 @@
     <style name="bottom_navigation_style" parent="Theme.Islamii">
         <item name="backgroundTint">@color/Gold</item>
     </style>
+
+    <style name="sura_content_style" parent="Theme.Islamii">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    
+    <style name="toolbarTitle" parent="Theme.Islamii">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 </resources>

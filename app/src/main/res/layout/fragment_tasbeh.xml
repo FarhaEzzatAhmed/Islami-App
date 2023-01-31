@@ -11,58 +11,68 @@
        app:layout_constraintTop_toTopOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
-       android:text="@string/islamii"
-       android:textColor="@color/black"
-       android:layout_marginTop="13dp"
+       android:text="إسلامي"
+       style="@style/toolbarTitle"
+       android:layout_marginTop="16dp"
        android:textSize="30sp"/>
 
 
     <ImageView
-        android:layout_marginTop="40dp"
-        android:id="@+id/sebha_body_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/islami_top_text"
+        android:id="@+id/sebha_body_image"
+        android:layout_width="180dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="30dp"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="@id/islami_top_text"
         app:layout_constraintEnd_toEndOf="@id/islami_top_text"
-        android:src="@drawable/bodyofsebha"/>
+        app:layout_constraintTop_toBottomOf="@id/islami_top_text"
+        android:src="@drawable/sebhaabg"
+
+     />
 
     <TextView
+
         android:id="@+id/tasbeh_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tasbeh's Number"
-        app:layout_constraintTop_toBottomOf="@id/sebha_body_img"
+        android:text="عدد التسبيحات"
+        style="@style/toolbarTitle"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/sebha_body_image"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="25sp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
-        android:id="@+id/counter_tasbeh"
-        android:layout_marginTop="40dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/counter"
+        android:layout_width="69dp"
+        android:layout_height="81dp"
         app:layout_constraintTop_toBottomOf="@id/tasbeh_number"
-        app:layout_constraintStart_toStartOf="@id/tasbeh_number"
-        app:layout_constraintEnd_toEndOf="@id/tasbeh_number"
-        android:background="@drawable/counter_style"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="25sp"/>
-
-    <Button
-        android:id="@+id/sobhan_allah"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/counter_tasbeh"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/tasbeh_style"
-        android:text="Sobhan Allah"
-        android:textColor="@color/white"
+        android:text="0"
         android:textStyle="bold"
-        android:textSize="25sp"/>
+        android:textSize="25dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:background="@drawable/textbg"
+        />
 
+   <TextView
+       android:id="@+id/phase"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       android:textSize="25dp"
+       android:textStyle="bold"
+       android:textColor="@color/white"
+       android:text="سبحان الله"
+       android:background="@drawable/tasbehcontentbg"
+       android:layout_marginTop="12dp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/counter"
+
+       />
 </androidx.constraintlayout.widget.ConstraintLayout>

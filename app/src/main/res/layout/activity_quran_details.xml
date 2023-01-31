@@ -7,6 +7,74 @@
     android:background="@drawable/bg3"
     tools:context=".quran_details.Quran_Details_activity">
 
+    <androidx.appcompat.widget.Toolbar
+    android:id="@+id/islami_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/islami_title"
+            style="@style/toolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="إسلامي"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/back"
+            android:src="@drawable/back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="25dp"
+            android:layout_height="25dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/sura_content_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/islami_toolbar"
+        app:layout_constraintHeight_percent="0.8"
+        app:layout_constraintWidth_percent="0.8">
+        <TextView
+            style="@style/sura_content_style"
+            android:id="@+id/sura_details_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@id/sura_content_recycler_view"
+            app:layout_constraintStart_toStartOf="@id/sura_content_recycler_view"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/sura_content_recycler_view"
+
+
+
+            />
+
+<View
+    android:id="@+id/divider"
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="12dp"
+    android:background="@color/Gold"
+    app:layout_constraintTop_toBottomOf="@id/sura_details_name"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/sura_content_recycler_view"
         android:layout_width="0dp"
@@ -16,9 +84,10 @@
         android:background="@drawable/sura_content_bg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHeight_percent="0.8"
         app:layout_constraintWidth_percent="0.8"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

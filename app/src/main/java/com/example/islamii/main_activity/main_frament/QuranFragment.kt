@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +20,7 @@ import com.example.islamii.quran_details.Quran_Details_activity
 class QuranFragment :Fragment(){
     lateinit var quranRecyclerView: RecyclerView
     lateinit var quranAdapter : SurasNameAdapter
+    lateinit var switchModeButtom:Button
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,8 +35,9 @@ class QuranFragment :Fragment(){
         quranAdapter = SurasNameAdapter(ArSuras)
         quranRecyclerView.adapter = quranAdapter
         quranRecyclerView.layoutManager =LinearLayoutManager(context)
+        switchModeButtom = view.findViewById(R.id.switch_mod)
+        switchModeLogic()
         quranAdapter.onSuraClickListener = object : OnsouraClickListener{
-
             override fun onSuraClick(position: Int , suraName :String) {
                 val intent1 = Intent(requireActivity(),Quran_Details_activity::class.java)
                 intent1.putExtra(Constans.EXTRA_SURA_POSITION,position)
@@ -42,5 +46,25 @@ class QuranFragment :Fragment(){
             }
         }
     }
+fun switchModeLogic() {
+
+    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+        switchModeButtom.text = "Light"
+    }else{
+        switchModeButtom.text = "Dark"
+
+    }
+    switchModeButtom.setOnClickListener{
+
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            switchModeButtom.text = "Dark"
+        }else{
+            switchModeButtom.text = "Light"
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+
+        }
+    }
+}
 
 }
