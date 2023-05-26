@@ -15,7 +15,7 @@ class SplashActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         Handler(Looper.getMainLooper()).postDelayed({
 
-        val intent = Intent(this@SplashActivity, MainActivity::class.java)
+         val intent = Intent(this@SplashActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
 

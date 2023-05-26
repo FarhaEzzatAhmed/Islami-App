@@ -11,7 +11,7 @@ import com.example.islamii.R
 import com.example.islamii.callbacks.OnsouraClickListener
 import com.example.islamii.data_model.SourasData
 
-class SurasNameAdapter(var suras : List<String> , var count: Int =286) :
+class SurasNameAdapter(var suras : List<String>) :
 
     RecyclerView.Adapter<SurasNameAdapter.SourasNameViewHolder>() {
     var onSuraClickListener :OnsouraClickListener? = null
@@ -24,7 +24,7 @@ class SurasNameAdapter(var suras : List<String> , var count: Int =286) :
 
     override fun onBindViewHolder(holder: SourasNameViewHolder, position: Int) {
         holder.suraName.text = suras.get(position)
-        holder.suraContentCount.text = "$count"
+       // holder.suraContentCount.text = "$count"
         holder.itemView.setOnClickListener{
             onSuraClickListener?.onSuraClick(position,suras.get(position))
         }
@@ -35,10 +35,10 @@ class SurasNameAdapter(var suras : List<String> , var count: Int =286) :
     }
   class SourasNameViewHolder(val itemView :View) :ViewHolder(itemView){
  var suraName :TextView
- var  suraContentCount :TextView
+// var  suraContentCount :TextView
       init {
           suraName = itemView.findViewById(R.id.sura_name)
-          suraContentCount = itemView.findViewById(R.id.sura_number)
+         // suraContentCount = itemView.findViewById(R.id.sura_number)
       }
 
   }
